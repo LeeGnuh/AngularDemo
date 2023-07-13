@@ -1,0 +1,11 @@
+<p>list works!</p>
+<table>
+    <thead>
+        <th>Index</th>
+        <th>Name</th>
+        <th>Type</th>
+    </thead>
+    <tbody>
+        <app-detail *ngFor="let pokemon of pokemons" [detail]="pokemon" (remove)="handleRemove($event)"></app-detail>
+    </tbody>
+</table>

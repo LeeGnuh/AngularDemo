@@ -1,0 +1,43 @@
+<p>Directive works!</p>
+<h1>Directive</h1>
+
+<p>ngForm</p>
+<div class="container">
+    <form #itemForm="ngForm" (ngSubmit)="onSubmit(itemForm)">
+        <label for="name">Name </label>
+        <input type="text" id="name" class="form-control" name="name" ngModel required/><br>
+        <label for="name">Email </label>
+        <input type="text" id="email" class="form-control" name="email" ngModel required/><br><br>
+        <button type="submit">Submit</button>
+    </form>
+    <div [hidden]="!itemForm.form.valid">
+        <p>{{ submitMessage }}</p>
+    </div>
+</div>
+
+<p>ngIf, ngTemplate</p>
+<p>Enter "123456" to open bag</p>
+<input type="text" [value]="text" (input)="content($event)">
+<div *ngIf="text=='123456' ;then show; else unshow"></div>
+<ng-template #unshow>
+    <p>Bag close</p>
+</ng-template>
+<ng-template #show>
+    <p>ngFor</p>
+    <p>Your Pokemon list</p>
+    <table>
+        <thead>
+            <th>Index</th>
+            <th>Name</th>
+            <th>Type</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pokemon of pokemons; let i = index" [class.favorite]="pokemon.favorite" [ngClass]="{'not-favorite' : !pokemon.favorite}">
+                <td>{{ pokemon.id }}</td>
+                <td>{{ pokemon.name }}</td>
+                <td>{{ pokemon.type }}</td>
+            </tr>
+
+        </tbody>
+    </table>
+</ng-template>

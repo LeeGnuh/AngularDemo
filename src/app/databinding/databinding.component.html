@@ -1,0 +1,27 @@
+<p>Databinding works!</p>
+<h1>One-way</h1>
+<br>
+<button (click)="turn()">On/Off</button>
+<div [hidden]="bool">
+    <br>
+    <div>
+        <span [style.font-size.px]="(size)">FontSize: 
+        <button type="button" [disabled]="size==15" (click)="dec()" title="smaller">-</button>
+            {{size}}px
+         <button type="button" [disabled]="size==25" (click)="inc()" title="bigger">+</button>
+    </span>
+    </div>
+    <div [style.font-size.px]="size">Resizable Text</div>
+    <br>
+    <h1>Two-way</h1>
+    <div>
+        <input [(ngModel)]="something" />
+        <p>{{ something }} </p>
+    </div>
+
+    <h1>Template Reference Variable </h1>
+    <input #phone placeholder="phone number" />
+    <button type="button" (click)="callPhone(phone.value)">Call</button>
+    <br>
+    <br>
+</div>

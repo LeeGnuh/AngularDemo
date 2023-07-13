@@ -1,0 +1,9 @@
+.favorite {
+    color: #ffffff;
+    background: #343434;
+}
+
+.not-favorite {
+    color: #343434;
+    background: #ffffff;
+}
