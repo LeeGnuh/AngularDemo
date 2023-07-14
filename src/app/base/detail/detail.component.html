@@ -1,7 +1,8 @@
+<br>
 <tr [class.favorite]="detail.favorite" [ngClass]="{'not-favorite' : !detail.favorite}">
-    <td>{{ detail.id }}</td>
-    <td>{{ detail.name }}</td>
-    <td>{{ detail.type }}</td>
+    <td>{{ detail.idPK }}</td>
+    <td>{{ detail.namePK }}</td>
+    <td>{{ detail.typePK }}</td>
     <button (click)="onRemove()">RemovePokemon</button>
 </tr>
 <br>

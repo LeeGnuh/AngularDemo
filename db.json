@@ -1,0 +1,14 @@
+{
+    "pokemon": [
+        { "id": 1, "namePK": "pikachu", "typePK": "electric", "favorite": true },
+        { "id": 2, "namePK": "hitokage", "typePK": "fire", "favorite": false },
+        { "id": 3, "namePK": "fushigidane", "typePK": "grass", "favorite": false },
+        { "id": 4, "namePK": "zenigame", "typePK": "water", "favorite": true }
+    ],
+    "type": [
+        { "id": 1, "value": "electric" },
+        { "id": 2, "value": "fire" },
+        { "id": 3, "value": "grass" },
+        { "id": 4, "value": "water" }
+    ]
+}

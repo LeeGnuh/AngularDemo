@@ -1,0 +1,45 @@
+<p>
+    form works!
+</p>
+<form #itemform="ngForm">
+    <p>Pokemon name:</p>
+    <input name="NamePK" type="text" [(ngModel)]="pokemon.namePK" />
+    <p>Pokemon type:</p>
+    <input name="TypePK" type="text" [(ngModel)]="pokemon.typePK" />
+    <label>
+      <select (ngModelChange)="onSelect($event)" name="pokemonType" [(ngModel)]="pokemon.typePK">
+        <option *ngFor="let type of pokemonType" 
+                [value]="type.value" 
+                [selected] = "type.value===pokemon.typePK">
+                {{ type.value }}
+        </option>
+      </select>
+    </label>
+    <p>Favorite</p>
+    <label>
+      <input type="radio"
+             name="Favorite"
+             [value]="true"
+             [(ngModel)]="pokemon.favorite"
+             (ngModelChange)="toggleIsFav($event)"
+      /> Yes
+    </label>
+    <label>
+      <input type="radio"
+             name="Favorite"
+             [value]="false"
+             [(ngModel)]="pokemon.favorite"
+             (ngModelChange)="toggleIsFav($event)"
+      /> No
+    </label>
+    <p>Bring Pokemon</p>
+    <label>
+      <input type="checkbox"
+             name="InBag"      
+             [(ngModel)]="pokemon.inBag"
+             (ngModelChange)="onChoose($event)"
+      />
+    </label>
+</form>
+<br> Model: {{ pokemon | json }}
+<br> Form in here: {{ itemform.value | json }}

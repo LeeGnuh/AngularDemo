@@ -1,7 +1,11 @@
 export interface Pokemon{
-    id: number,
-    name: string,
-    type: string,
-    favorite: boolean
+    idPK: number,
+    namePK: string,
+    typePK: string,
+    favorite: boolean,
+    inBag : boolean
   }
-  
+  export interface PokemonType{
+    key: number,
+    value: string
+  }

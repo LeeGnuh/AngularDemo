@@ -7,13 +7,15 @@ import { DatabindingComponent } from './databinding/databinding.component';
 import { DirectiveComponent } from './directive/directive.component';
 import { BaseModule } from './base/base.module';
 import { ListComponent } from './base/list/list.component';
+import { FormComponent } from './form/form.component';
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
     DatabindingComponent,
     DirectiveComponent,
-  ],
+      FormComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
