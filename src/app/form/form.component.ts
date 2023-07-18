@@ -26,6 +26,11 @@ export class FormComponent implements OnInit {
     
   }
 
+  handleSubmit(object : any){
+    console.log(object);
+    
+  }
+
   ngOnInit() {
     this.pokemonService.getType().subscribe((data : PokemonType[])=>{
       this.pokemonType = data;

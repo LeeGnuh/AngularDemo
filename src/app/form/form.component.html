@@ -1,7 +1,7 @@
 <p>
     form works!
 </p>
-<form #itemform="ngForm">
+<form #itemform="ngForm" (ngSubmit)="handleSubmit(itemform)">
     <p>Pokemon name:</p>
     <input name="NamePK" type="text" [(ngModel)]="pokemon.namePK" />
     <p>Pokemon type:</p>
@@ -40,6 +40,8 @@
              (ngModelChange)="onChoose($event)"
       />
     </label>
+    <br><br>
+    <button type="submit" [disabled]="!itemform.valid">Save</button>
 </form>
 <br> Model: {{ pokemon | json }}
 <br> Form in here: {{ itemform.value | json }}

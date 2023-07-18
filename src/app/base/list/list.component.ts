@@ -10,7 +10,7 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 })
 export class ListComponent implements OnInit {
   pokemons!: Pokemon[];
-
+  
   constructor(private pokemonSrvice: PokemonService){
 
   }
