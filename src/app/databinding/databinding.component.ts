@@ -1,9 +1,10 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-databinding',
   templateUrl: './databinding.component.html',
-  styleUrls: ['./databinding.component.css']
+  styleUrls: ['./databinding.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DatabindingComponent {
   

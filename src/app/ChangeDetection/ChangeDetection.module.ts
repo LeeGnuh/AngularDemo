@@ -1,25 +1,26 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ListComponent } from './list/list.component';
-import { DetailComponent } from './detail/detail.component';
+
 import { PokemonService } from '../services/pokemon.service';
 import { HttpClientModule } from '@angular/common/http';
+import { TestZoneJsComponent } from './TestZoneJs/TestZoneJs.component';
+import { TestOnPushComponent } from './TestOnPush/TestOnPush.component';
 
 @NgModule({
   declarations: [
-    ListComponent,
-    DetailComponent
+    TestZoneJsComponent,
+    TestOnPushComponent
   ],
   imports: [ 
     CommonModule,
     HttpClientModule
   ],
   exports:[
-    ListComponent,
-    DetailComponent
+    TestZoneJsComponent,
+    TestOnPushComponent
   ],
   providers:[
     PokemonService
   ]
 })
-export class BaseModule { }
+export class CDModule { }
