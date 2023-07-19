@@ -9,6 +9,7 @@ import { DirectiveComponent } from './directive/directive.component';
 import { BaseModule } from './base/base.module';
 import { FormComponent } from './form/form.component';
 import { CDModule } from './ChangeDetection/ChangeDetection.module';
+import { RxJSModule } from './RxJS/base.module';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { CDModule } from './ChangeDetection/ChangeDetection.module';
     FormsModule, 
     BaseModule,
     AASModule,
-    CDModule
+    CDModule,
+    RxJSModule
   ],
   providers: [],
   bootstrap: [AppComponent]
