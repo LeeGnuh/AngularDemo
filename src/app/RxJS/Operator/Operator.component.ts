@@ -9,8 +9,7 @@ import { of, map, filter, pipe } from 'rxjs';
 export class OperatorComponent implements OnInit {
 
   constructor() { }
-
- 
+  
   ngOnInit() {
 
     // Creation Operator
