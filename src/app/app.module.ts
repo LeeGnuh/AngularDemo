@@ -10,14 +10,16 @@ import { BaseModule } from './base/base.module';
 import { FormComponent } from './form/form.component';
 import { CDModule } from './ChangeDetection/ChangeDetection.module';
 import { RxJSModule } from './RxJS/base.module';
+import { LifeCycleComponent } from './LifeCycle/LifeCycle.component';
 
 
 @NgModule({
-  declarations: [		
+  declarations: [			
     AppComponent,
     DatabindingComponent,
     DirectiveComponent,
     FormComponent,
+      LifeCycleComponent
    ],
   imports: [
     BrowserModule,

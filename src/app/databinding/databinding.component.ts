@@ -4,7 +4,7 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from 
   selector: 'app-databinding',
   templateUrl: './databinding.component.html',
   styleUrls: ['./databinding.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+
 })
 export class DatabindingComponent {
   

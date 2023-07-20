@@ -11,57 +11,41 @@ export class ObservableComponent implements OnInit, OnDestroy {
 
   subscription = new Subscription();
 
-  // Đây là function subscribe(observer) copy từ observer component
-  subscribe(observer : any) {   
-      observer.next(1);
-      observer.next(2);
-      observer.next(3);
-      observer.complete();
-      observer.error()
-  }
-
-  // Đây là dòng subscribe observer cho observable
-  observable = new Observable(this.subscribe); 
-
-  // Nhưng việc subscribe này hơi rườm rà có thể code gọn lại như bên dưới
-  observable1 = new Observable(observer => {
-      observer.next(1);
-      observer.next(2);
-      observer.next(3);
-      observer.complete();
-      observer.error()   
-  });
-
-  // Ngoài ra còn có thể code ở dạng thiếu như sau
-  observable2 = new Observable(observer => {
-      observer.next(1);
-      observer.complete();
-  });
-
-  //Hay đơn giản hơn nữa
-  observable3 = new Observable(observer => { observer.next(1); });
-
-
-
   constructor() { }
 
   ngOnInit() {
-  
-  this.observable.pipe(filter((x:any) => x <= 2)).subscribe({
-    next: observer => console.log(observer),    
-  })
 
-  this.observable1.subscribe({
-    next: observer => console.log(observer),
-  })
+    // Đây là function subscribe, function này sẽ được khai báo trong khởi tạo của Observable
+    const subscriber = (subscriber: any) => {   
+      subscriber.next(1);
+      subscriber.next(2);
+      subscriber.next(3);
+      subscriber.complete();
+      subscriber.error()
+    }
 
-  this.observable2.subscribe({
-    next: observer => console.log(observer),  
-  })
+    // Đây là dòng inject subscriber cho observable
+    const observable = new Observable(subscriber); 
 
-  this.observable3.subscribe({
-    next: observer => console.log(observer),    
-  })
+    // Nhưng việc inject như trên hơi rườm rà có thể code gọn lại như bên dưới
+    const observable1 = new Observable(subscriber => {
+      subscriber.next(1);
+      subscriber.next(2);
+      subscriber.next(3);
+      subscriber.complete();
+      subscriber.error()   
+    });
+
+    // Ngoài ra còn có thể code ở dạng gọn hơn như sau
+    const observable2 = new Observable(subscriber => {
+      subscriber.next(1);
+      subscriber.complete();
+    });
+
+    //Hay đơn giản hơn nữa
+    const observable3 = new Observable(subscriber => { 
+      subscriber.next(1); 
+    });
   }
 
   ngOnDestroy() { } 

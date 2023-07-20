@@ -1,0 +1,15 @@
+<p>
+    LifeCycle works!
+</p>
+<br>
+<!-- ngOnChanges -->
+<p> ngOnChanges </p>
+<input (input)="changeValue($event)" [(ngModel)]="myInput" type="text">
+<p>Hello, {{ myInput }}!</p>
+<br>
+<!-- ngOnCheck -->
+<p> ngOnCheck </p>
+<input [(ngModel)]="name" [type]="type">
+<p>Hello, {{ name }}!</p>
+
+<!-- ngAfterContentInit -->
