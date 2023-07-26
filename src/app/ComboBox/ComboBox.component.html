@@ -1,0 +1,29 @@
+<p>
+    ComboBox works!
+</p>
+
+<form>
+    Tỉnh/TP trực thuộc TW
+    <input list="listProvice" (change)="onInputProvince($event)" placeholder="Chọn" />
+    <datalist id="listProvice">
+        <option            
+            *ngFor="let index of province">
+            {{ index.name }}
+        </option>
+    </datalist> Quận/Huyện/Thị xã/Thành Phố
+    <input list="listDistrict" (change)="onInputDistrict($event)" placeholder="Chọn" />
+    <datalist id="listDistrict">
+        <option 
+            *ngFor="let index of temp_District">
+            {{ index.name }}
+        </option>
+    </datalist> Xã/Phường/Thị trấn
+    <input list="listCommune" placeholder="Chọn" />
+    <datalist id="listCommune">
+        <option 
+            *ngFor="let index of temp_Commune">
+            {{ index.name }}
+        </option>
+    </datalist>
+    <br><br>
+</form>

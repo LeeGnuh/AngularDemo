@@ -4,6 +4,7 @@ import { ObservableComponent } from './Observable/Observable.component';
 import { ObserverComponent } from './Observer/Observer.component';
 import { OperatorComponent } from './Operator/Operator.component';
 import { SubscriptionComponent } from './Subscription/Subscription.component';
+import { SubjectComponent } from './Subject/Subject.component';
 
 @NgModule({
   declarations: [
@@ -11,6 +12,7 @@ import { SubscriptionComponent } from './Subscription/Subscription.component';
     ObserverComponent,
     OperatorComponent,
     SubscriptionComponent,
+    SubjectComponent,
   ],
   imports: [ 
     CommonModule,
@@ -20,6 +22,7 @@ import { SubscriptionComponent } from './Subscription/Subscription.component';
     ObserverComponent,
     OperatorComponent,
     SubscriptionComponent,
+    SubjectComponent,
   ],
   providers:[
   ]

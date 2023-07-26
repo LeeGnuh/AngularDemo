@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonService } from '../services/pokemon.service';
-import { Pokemon, PokemonType } from '../models/Pokemon';
+import { Pokemon, PokemonType, nameTable } from '../models/Pokemon';
+import { NameTBService } from '../services/nameTB.service';
 
 @Component({
   selector: 'app-form',
@@ -11,7 +12,8 @@ export class FormComponent implements OnInit {
 
   pokemon! : Pokemon;
   pokemonType! : PokemonType[];
-  constructor(private pokemonService : PokemonService) { }
+  name!:nameTable[];
+  constructor(private pokemonService : PokemonService, private nameTBS : NameTBService) { }
    
   toggleIsFav(object: any){
     console.log(object); 
@@ -32,11 +34,16 @@ export class FormComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.nameTBS.getAll().subscribe((data : nameTable[])=>{
+      this.name = data;
+      console.log(this.name);
+    })
+
     this.pokemonService.getType().subscribe((data : PokemonType[])=>{
       this.pokemonType = data;
-    console.log(this.pokemonType);
-    
+      console.log(this.pokemonType);
     })
+    
     this.pokemonService.getPokemonByID(1).subscribe((data : Pokemon)=>{
       this.pokemon = data;         
     });

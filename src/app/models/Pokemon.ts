@@ -5,7 +5,11 @@ export interface Pokemon{
     favorite: boolean,
     inBag : boolean
   }
-  export interface PokemonType{
-    key: number,
-    value: string
-  }
+export interface PokemonType{
+  key: number,
+  value: string
+}
+export interface nameTable{
+  id: number,
+  name: string
+}

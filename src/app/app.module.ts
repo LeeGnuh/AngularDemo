@@ -9,17 +9,21 @@ import { DirectiveComponent } from './directive/directive.component';
 import { BaseModule } from './base/base.module';
 import { FormComponent } from './form/form.component';
 import { CDModule } from './ChangeDetection/ChangeDetection.module';
-import { RxJSModule } from './RxJS/base.module';
+import { RxJSModule } from './RxJS/RxJS.module';
 import { LifeCycleComponent } from './LifeCycle/LifeCycle.component';
+import { ComboBoxComponent } from './ComboBox/ComboBox.component';
+import { ChangeTenancyComponent } from './ChangeTenancy/ChangeTenancy.component';
 
 
 @NgModule({
-  declarations: [			
+  declarations: [					
     AppComponent,
     DatabindingComponent,
     DirectiveComponent,
     FormComponent,
-      LifeCycleComponent
+    LifeCycleComponent,
+    ComboBoxComponent,
+      ChangeTenancyComponent
    ],
   imports: [
     BrowserModule,

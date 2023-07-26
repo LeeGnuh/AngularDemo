@@ -10,5 +10,12 @@
         { "id": 2, "value": "fire" },
         { "id": 3, "value": "grass" },
         { "id": 4, "value": "water" }
+    ],
+    "nameTable": [
+        { "id": 1, "name": "Hung" },
+        { "id": 2, "name": "Huy" },
+        { "id": 3, "name": "Huong" },
+        { "id": 4, "name": "Hanh" },
+        { "id": 5, "name": "Ha" }
     ]
 }
